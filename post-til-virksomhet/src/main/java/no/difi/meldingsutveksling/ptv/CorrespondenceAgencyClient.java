@@ -1,8 +1,8 @@
 package no.difi.meldingsutveksling.ptv;
 
 import lombok.SneakyThrows;
-import no.altinn.services._2009._10.Test;
-import no.altinn.services.serviceengine.correspondence._2009._10.CorrespondenceStatusHistoryResult;
+//import no.altinn.services._2009._10.Test;
+//import no.altinn.services.serviceengine.correspondence._2009._10.CorrespondenceStatusHistoryResult;
 import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
@@ -17,7 +17,7 @@ import org.springframework.ws.client.support.interceptor.ClientInterceptor;
 import org.springframework.ws.soap.addressing.client.ActionCallback;
 import org.springframework.ws.soap.addressing.version.Addressing10;
 import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
-import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
+//import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
 import org.springframework.ws.transport.http.HttpComponentsMessageSender;
 
 import javax.xml.soap.MessageFactory;
@@ -117,18 +117,20 @@ public class CorrespondenceAgencyClient extends WebServiceGatewaySupport {
 
     private ClientInterceptor createSecurityInterceptors(String username, String password) {
 
-        final Wss4jSecurityInterceptor securityInterceptor = new Wss4jSecurityInterceptor();
+//        final Wss4jSecurityInterceptor securityInterceptor = new Wss4jSecurityInterceptor();
+//
+//        securityInterceptor.setSecurementActions("UsernameToken");
+//        securityInterceptor.setSecurementUsername(username);
+//        securityInterceptor.setSecurementPassword(password);
+//        securityInterceptor.setSecurementPasswordType("PasswordText");
+//        securityInterceptor.setSecurementUsernameTokenNonce(true);
+//        securityInterceptor.setSecurementUsernameTokenCreated(true);
+//        securityInterceptor.setValidateResponse(false);
+////        securityInterceptor.setSecurementUsernameTokenElements("Nonce Created"); // from the old decpreated WSS4JSecurityInterceptor. Not sure if the above is wor
+//
+//        return securityInterceptor;
 
-        securityInterceptor.setSecurementActions("UsernameToken");
-        securityInterceptor.setSecurementUsername(username);
-        securityInterceptor.setSecurementPassword(password);
-        securityInterceptor.setSecurementPasswordType("PasswordText");
-        securityInterceptor.setSecurementUsernameTokenNonce(true);
-        securityInterceptor.setSecurementUsernameTokenCreated(true);
-        securityInterceptor.setValidateResponse(false);
-//        securityInterceptor.setSecurementUsernameTokenElements("Nonce Created"); // from the old decpreated WSS4JSecurityInterceptor. Not sure if the above is wor
-
-        return securityInterceptor;
+        return null;
     }
 
     /**
@@ -146,15 +148,16 @@ public class CorrespondenceAgencyClient extends WebServiceGatewaySupport {
         return getWebServiceTemplate().marshalSendAndReceive(this.endpointUrl, payload, getActionCallback(soapAction));
     }
 
-    public CorrespondenceStatusHistoryResult sendStatusHistoryRequest(Object payload) {
-        final String soapAction = "http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10/ICorrespondenceAgencyExternal/GetCorrespondenceStatusHistory";
-        return (CorrespondenceStatusHistoryResult) getWebServiceTemplate().marshalSendAndReceive(this.endpointUrl, payload, getActionCallback(soapAction));
-    }
+//    public CorrespondenceStatusHistoryResult sendStatusHistoryRequest(Object payload) {
+//        final String soapAction = "http://www.altinn.no/services/ServiceEngine/Correspondence/2009/10/ICorrespondenceAgencyExternal/GetCorrespondenceStatusHistory";
+//        return (CorrespondenceStatusHistoryResult) getWebServiceTemplate().marshalSendAndReceive(this.endpointUrl, payload, getActionCallback(soapAction));
+//    }
 
     public Object sendTestRequest() {
         final String soapAction = "http://www.altinn.no/services/2009/10/IAltinnContractBase/Test";
-        Test testRequest = new Test();
-        return getWebServiceTemplate().marshalSendAndReceive(this.endpointUrl, testRequest, getActionCallback(soapAction));
+        //Test testRequest = new Test();
+        //return getWebServiceTemplate().marshalSendAndReceive(this.endpointUrl, testRequest, getActionCallback(soapAction));
+        return null;
     }
 
     @SneakyThrows(URISyntaxException.class)

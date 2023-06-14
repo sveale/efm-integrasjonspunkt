@@ -36,12 +36,12 @@ class DpvStatusStrategy(private val correspondencyAgencyMessageFactory: Correspo
     override fun checkStatus(conversations: MutableSet<Conversation>) {
         log.debug("Checking status for ${conversations.size} DPV messages..")
         val request = correspondencyAgencyMessageFactory.createReceiptRequest(conversations)
-        val result = correspondenceAgencyClient.sendStatusHistoryRequest(request)
-        result?.correspondenceStatusInformation?.value?.correspondenceStatusDetailsList?.value?.statusV2?.forEach { s ->
-            conversations.find { it.messageId == s.sendersReference.value }?.let {
-                updateStatus(it, s)
-            }
-        }
+//        val result = correspondenceAgencyClient.sendStatusHistoryRequest(request)
+//        result?.correspondenceStatusInformation?.value?.correspondenceStatusDetailsList?.value?.statusV2?.forEach { s ->
+//            conversations.find { it.messageId == s.sendersReference.value }?.let {
+//                updateStatus(it, s)
+//            }
+//        }
     }
 
     private fun updateStatus(c: Conversation, status: StatusV2) {

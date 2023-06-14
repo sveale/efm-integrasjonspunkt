@@ -56,16 +56,16 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.ws</groupId>
-            <artifactId>spring-ws-security</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>geronimo-javamail_1.4_mail</artifactId>
-                    <groupId>org.apache.geronimo.javamail</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ws</groupId>-->
+<!--            <artifactId>spring-ws-security</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>geronimo-javamail_1.4_mail</artifactId>-->
+<!--                    <groupId>org.apache.geronimo.javamail</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
